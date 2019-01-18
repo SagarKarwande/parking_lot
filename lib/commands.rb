@@ -5,7 +5,12 @@ def create_parking_lot(args)
 end
 
 def park(parking_lot, car_number, car_color)
-  parking_lot.park(car_number, car_color)
+  slot = parking_lot.park(car_number, car_color)
+  if !slot.nil?
+    return "Allocated​ ​ slot​ ​ number:​ ​ #{slot.number}"
+  else
+    return 'Sorry, parking lot is full'
+  end
 end
 
 def leave(parking_lot, slot_number)
