@@ -12,7 +12,11 @@ def handle_command(cmd, args)
     puts "\nOutput:\nCreated parking lot with #{args[0]} slots"
   when 'park'
     spot = send(cmd.to_sym, $parking_lot, args[0], args[1])
-    puts "\nOutput:\nAllocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
+    if !spot.nil?
+      puts "\nOutput:\nAllocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
+    else
+      puts 'Sorry, parking lot is free'
+    end
   when 'leave'
     spot = send(cmd.to_sym, $parking_lot, args[0])
     puts "\nOutput:\nSlot​ number​ #{args[0]} ​is​ ​free"
