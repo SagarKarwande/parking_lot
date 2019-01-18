@@ -15,8 +15,7 @@ def execute_cmd(cmd, args)
   when 'status'
     send(cmd.to_sym, $parking_lot)
   when 'leave'
-    spot = send(cmd.to_sym, $parking_lot, args[0])
-    "Slot​ number​ #{args[0]} ​is​ ​free"
+    send(cmd.to_sym, $parking_lot, args[0])
   when 'registration_numbers_for_cars_with_colour'
     send(cmd.to_sym, $parking_lot, args[0])
   when 'slot_numbers_for_cars_with_colour'

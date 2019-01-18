@@ -15,6 +15,7 @@ end
 
 def leave(parking_lot, slot_number)
   parking_lot.leave(slot_number.to_i)
+  "Slot​ number​ #{slot_number} ​is​ ​free"
 end
 
 def status(parking_lot)
