@@ -4,7 +4,6 @@ require './lib/commands.rb'
 
 file_path = ARGV[0]
 $parking_lot = nil
-$single_arg_cmd = []
 
 def execute_cmd(cmd, args)
   case cmd
@@ -24,6 +23,8 @@ def execute_cmd(cmd, args)
 end
 
 if file_path
+  raise ArgumentError, 'Files does not exits' unless File.exist?(file_path)
+
   File.readlines(file_path).each do |line|
     execute = line
     cmd = execute.split(' ')[0]
