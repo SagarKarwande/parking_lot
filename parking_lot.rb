@@ -4,6 +4,7 @@ require './lib/commands.rb'
 
 file_path = ARGV[0]
 $parking_lot = nil
+$single_arg_cmd = []
 
 def execute_cmd(cmd, args)
   case cmd
@@ -14,13 +15,8 @@ def execute_cmd(cmd, args)
     send(cmd.to_sym, $parking_lot, args[0], args[1])
   when 'status'
     send(cmd.to_sym, $parking_lot)
-  when 'leave'
-    send(cmd.to_sym, $parking_lot, args[0])
-  when 'registration_numbers_for_cars_with_colour'
-    send(cmd.to_sym, $parking_lot, args[0])
-  when 'slot_numbers_for_cars_with_colour'
-    send(cmd.to_sym, $parking_lot, args[0])
-  when 'slot_number_for_registration_number'
+  when 'leave', 'registration_numbers_for_cars_with_colour',
+      'slot_numbers_for_cars_with_colour', 'slot_number_for_registration_number'
     send(cmd.to_sym, $parking_lot, args[0])
   else
     'Invalid command'
