@@ -31,3 +31,7 @@ def slot_numbers_for_cars_with_colour(parking_lot, color)
   slot_numbers = slots.map(&:number)
   puts slot_numbers.join(', ')
 end
+
+def slot_number_for_registration_number(parking_lot, reg_num)
+  parking_lot.get_slot_by_reg_number(reg_num)
+end

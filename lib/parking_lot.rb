@@ -75,4 +75,11 @@ class ParkingLot
       end
     end
   end
+
+  def get_slot_by_reg_number(reg_number)
+    @parking_spots.each do |slot|
+      return slot if slot.vehicle && slot.vehicle.reg_num == reg_number
+    end
+    nil
+  end
 end

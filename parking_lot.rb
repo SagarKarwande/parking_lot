@@ -26,6 +26,13 @@ def handle_command(cmd, args)
     send(cmd.to_sym, $parking_lot, args[0])
   when 'slot_numbers_for_cars_with_colour'
     send(cmd.to_sym, $parking_lot, args[0])
+  when 'slot_number_for_registration_number'
+    slot = send(cmd.to_sym, $parking_lot, args[0])
+    if !slot.nil?
+      puts slot.number
+    else
+      puts 'Not found'
+    end
   else
     puts 'Invalid command'
   end

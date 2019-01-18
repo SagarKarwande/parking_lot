@@ -93,5 +93,23 @@ describe ParkingLot do
         expect(red_vehicles.length).to eq(1)
       end
     end
+
+    context 'get slot by registration number' do
+      it 'succeds with valid value' do
+        parking_lot = ParkingLot.new(3)
+        parking_lot.park('KA-01-HH-1234', 'White')
+        parking_lot.park('KA-02-HH-1234', 'White')
+        slot = parking_lot.get_slot_by_reg_number('KA-02-HH-1234')
+        expect(slot.number).to eq(2)
+      end
+
+      it 'fails with invalid value' do
+        parking_lot = ParkingLot.new(3)
+        parking_lot.park('KA-01-HH-1234', 'White')
+        parking_lot.park('KA-02-HH-1234', 'White')
+        slot = parking_lot.get_slot_by_reg_number('MH-02-HH-1235')
+        expect(slot).to be_nil
+      end
+    end
   end
 end
