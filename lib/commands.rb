@@ -40,5 +40,10 @@ def slot_numbers_for_cars_with_colour(parking_lot, color)
 end
 
 def slot_number_for_registration_number(parking_lot, reg_num)
-  parking_lot.get_slot_by_reg_number(reg_num)
+  slot = parking_lot.get_slot_by_reg_number(reg_num)
+  if !slot.nil?
+    return slot.number
+  else
+    return 'Not found'
+  end
 end
