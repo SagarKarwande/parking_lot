@@ -9,5 +9,5 @@ def park(parking_lot, car_number, car_color)
 end
 
 def leave(parking_lot, slot_number)
-  parking_lot.leave(slot_number)
+  parking_lot.leave(slot_number.to_i)
 end
