@@ -64,4 +64,15 @@ class ParkingLot
       end
     end
   end
+
+  def get_parking_slot_by_color(color)
+    parked_slots = get_parked_slot
+    parked_slots.reduce([]) do |acc, slot|
+      if slot.vehicle.color.eql? color
+        acc << slot
+      else
+        acc
+      end
+    end
+  end
 end
