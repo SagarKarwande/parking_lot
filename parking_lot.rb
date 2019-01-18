@@ -1,9 +1,8 @@
 #!/usr/bin/env ruby
 
+require './lib/commands.rb'
+
 file_path = ARGV[0]
-def create_parking_lot(args)
-  puts args
-end
 
 unless file_path
   execute = gets.to_s
@@ -11,5 +10,3 @@ unless file_path
   args = execute.split(' ')[1..-1]
   send(cmd.to_sym, args)
 end
-
-puts file_path

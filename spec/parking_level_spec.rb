@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ParkingLevel do
-  describe "#new" do
+  describe 'new' do
     context 'create new parking level' do
       it 'always with available parking spots' do
         parking_level = ParkingLevel.new(4)
@@ -9,7 +9,7 @@ describe ParkingLevel do
       end
 
       it 'raise exception when number less than zero' do
-        expect {ParkingLevel.new(0)}.to raise_error(ArgumentError)
+        expect { ParkingLevel.new(0) }.to raise_error(ArgumentError)
       end
     end
   end
