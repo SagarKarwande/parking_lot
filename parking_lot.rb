@@ -13,6 +13,9 @@ def handle_command(cmd, args)
   when 'park'
     spot = send(cmd.to_sym, $parking_lot, args[0], args[1])
     puts "\nOutput:\nAllocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
+  when 'leave'
+    spot = send(cmd.to_sym, $parking_lot, args[0])
+    puts "\nOutput:\nSlot​ number​ #{args[0]} ​is​ ​free"
   else
     puts 'Invalid command'
   end

@@ -16,4 +16,16 @@ class ParkingLot
       raise ParkingSpotError, 'Now parking space available'
     end
   end
+
+  def leave(slot_number)
+    @parking_levels.each do |parking_level|
+      parking_level.parking_spots.each do |parking_spot|
+        if parking_spot.number == slot_number
+          parking_spot.is_available = true
+          return true
+        end
+      end
+    end
+    raise ParkingSpotError, 'No parking space found'
+  end
 end
