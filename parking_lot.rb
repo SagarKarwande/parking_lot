@@ -22,6 +22,8 @@ def handle_command(cmd, args)
     puts "\nOutput:\nSlot​ number​ #{args[0]} ​is​ ​free"
   when 'status'
     send(cmd.to_sym, $parking_lot)
+  when 'registration_numbers_for_cars_with_colour'
+    send(cmd.to_sym, $parking_lot, args[0])
   else
     puts 'Invalid command'
   end

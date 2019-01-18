@@ -67,5 +67,18 @@ describe ParkingLot do
         end
       end
     end
+
+    context 'vehicle reg by color' do
+      it 'successfully' do
+        parking_lot = ParkingLot.new(3)
+        parking_lot.park('KA-01-HH-1234', 'White')
+        parking_lot.park('KA-02-HH-1234', 'White')
+        parking_lot.park('KA-03-HH-1234', 'Red')
+        white_vehicles = parking_lot.get_vehicle_reg_by_color('White')
+        red_vehicles = parking_lot.get_vehicle_reg_by_color('Red')
+        expect(white_vehicles.length).to eq(2)
+        expect(red_vehicles.length).to eq(1)
+      end
+    end
   end
 end

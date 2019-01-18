@@ -53,4 +53,15 @@ class ParkingLot
   def get_parked_slot
     @parking_spots.take_while { |spot| spot.is_available == false }
   end
+
+  def get_vehicle_reg_by_color(color)
+    parked_slots = get_parked_slot
+    parked_slots.reduce([]) do |acc, slot|
+      if slot.vehicle.color.eql? color
+        acc << slot.vehicle
+      else
+        acc
+      end
+    end
+  end
 end

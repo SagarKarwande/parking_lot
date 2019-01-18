@@ -7,4 +7,5 @@ gem 'awesome_print'
 group :development do
   gem 'rspec'
   gem 'rubocop'
+  gem 'pry'
 end

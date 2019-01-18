@@ -19,3 +19,9 @@ def status(parking_lot)
     puts "#{slot.number} #{slot.vehicle.reg_num} #{slot.vehicle.color}"
   end
 end
+
+def registration_numbers_for_cars_with_colour(parking_lot, color)
+  vehicles = parking_lot.get_vehicle_reg_by_color(color)
+  reg_nums = vehicles.map(&:reg_num)
+  puts reg_nums.join(', ')
+end
