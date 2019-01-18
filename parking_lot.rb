@@ -48,10 +48,12 @@ if file_path
   end
 else
   loop do
-    puts 'Input :'
+    puts "\nInput :"
     execute = gets.to_s
     cmd = execute.split(' ')[0]
     args = execute.split(' ')[1..-1]
-    execute_cmd(cmd, args)
+    cmd_output = execute_cmd(cmd, args)
+    puts "\nOutput :"
+    puts cmd_output
   end
 end
