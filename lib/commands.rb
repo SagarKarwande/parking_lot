@@ -16,7 +16,7 @@ def status(parking_lot)
   parked_slots = parking_lot.get_parked_slot
   status = "Slot​ No.  Registration​ No Colour\n"
   parked_slots.each do |slot|
-    status += "#{slot.number} #{slot.vehicle.reg_num} #{slot.vehicle.color}\n"
+    status += format("%-5s %15s %-10s \n", slot.number, slot.vehicle.reg_num, slot.vehicle.color)
   end
   status
 end
