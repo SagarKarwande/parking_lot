@@ -5,22 +5,32 @@ require './lib/commands.rb'
 file_path = ARGV[0]
 parking_lot = nil
 
-unless file_path
+def handle_command(cmd, args)
+  case cmd
+  when 'create_parking_lot'
+    parking_lot = send(cmd.to_sym, args)
+    puts "\nOutput:\nCreated parking lot with #{args[0]} slots"
+  when 'park'
+    spot = send(cmd.to_sym, parking_lot, args[0], args[1])
+    puts "\nOutput:\nAllocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
+  else
+    puts 'Invalid command'
+  end
+end
+
+if file_path
+  File.readlines(file_path).each do |line|
+    execute = line
+    cmd = execute.split(' ')[0]
+    args = execute.split(' ')[1..-1]
+    handle_command(cmd, args)
+  end
+else
   loop do
     puts 'Input :'
     execute = gets.to_s
     cmd = execute.split(' ')[0]
     args = execute.split(' ')[1..-1]
-
-    case cmd
-    when 'create_parking_lot'
-      parking_lot = send(cmd.to_sym, args)
-      puts "\nOutput:\nCreated parking lot with #{args[0]} slots"
-    when 'park'
-      spot = send(cmd.to_sym, parking_lot, args[0], args[1])
-      puts "\nOutput:\nAllocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
-    else
-      puts 'Invalid command'
-    end
+    handle_command(cmd, args)
   end
 end
