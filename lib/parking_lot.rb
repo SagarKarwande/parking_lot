@@ -21,8 +21,7 @@ class ParkingLot
     return nil if parking_spot.nil?
 
     vehicle = Vehicle.new(registration_number, car_color)
-    vehicle.parking_level == @self
-    vehicle.parking_spot == parking_spot
+    parking_spot.vehicle = vehicle
     parking_spot.is_available = false
 
     parking_spot
@@ -49,5 +48,9 @@ class ParkingLot
 
     parking_spot.is_available = true
     true
+  end
+
+  def get_parked_slot
+    @parking_spots.take_while { |spot| spot.is_available == false }
   end
 end

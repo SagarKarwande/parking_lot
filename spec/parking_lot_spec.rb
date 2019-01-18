@@ -57,6 +57,15 @@ describe ParkingLot do
         parking_lot = ParkingLot.new(3)
         expect { parking_lot.leave(4) }.to raise_error(ParkingSpotError)
       end
+
+      context 'get parked slots' do
+        it 'successfully' do
+          parking_lot = ParkingLot.new(3)
+          parking_lot.park('KA-01-HH-1234', 'White')
+          filled_slot = parking_lot.get_parked_slot
+          expect(filled_slot.length).to eq(1)
+        end
+      end
     end
   end
 end
