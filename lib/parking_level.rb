@@ -18,6 +18,8 @@ class ParkingLevel
   def park(registration_number, car_color)
     parking_spot = get_nearest_available_spot
 
+    return nil if parking_spot.nil?
+
     vehicle = Vehicle.new(registration_number, car_color)
     vehicle.parking_level == @self
     vehicle.parking_spot == parking_spot
@@ -30,6 +32,6 @@ class ParkingLevel
     parking_spots.each do |spot|
       return spot if spot.is_available
     end
-    raise ParkingSpotError, 'No parking space available'
+    nil
   end
 end

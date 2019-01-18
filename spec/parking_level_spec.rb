@@ -27,7 +27,8 @@ describe ParkingLevel do
           parking_level.park('KA-01-HH-1234', 'White')
         end
 
-        expect { parking_level.park('KA-01-HH-1234', 'White') }.to raise_error(ParkingSpotError)
+        parking_spot = parking_level.park('KA-01-HH-1234', 'White')
+        expect(parking_spot).to be_nil
       end
     end
   end
