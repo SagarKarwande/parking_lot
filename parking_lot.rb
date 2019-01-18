@@ -3,15 +3,15 @@
 require './lib/commands.rb'
 
 file_path = ARGV[0]
-parking_lot = nil
+$parking_lot = nil
 
 def handle_command(cmd, args)
   case cmd
   when 'create_parking_lot'
-    parking_lot = send(cmd.to_sym, args)
+    $parking_lot = send(cmd.to_sym, args)
     puts "\nOutput:\nCreated parking lot with #{args[0]} slots"
   when 'park'
-    spot = send(cmd.to_sym, parking_lot, args[0], args[1])
+    spot = send(cmd.to_sym, $parking_lot, args[0], args[1])
     puts "\nOutput:\nAllocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
   else
     puts 'Invalid command'
