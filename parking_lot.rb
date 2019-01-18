@@ -5,21 +5,21 @@ require './lib/commands.rb'
 file_path = ARGV[0]
 $parking_lot = nil
 
-def handle_command(cmd, args)
+def execute_cmd(cmd, args)
   case cmd
   when 'create_parking_lot'
     $parking_lot = send(cmd.to_sym, args)
-    puts "\nOutput:\nCreated parking lot with #{args[0]} slots"
+    "Created parking lot with #{args[0]} slots"
   when 'park'
     spot = send(cmd.to_sym, $parking_lot, args[0], args[1])
     if !spot.nil?
-      puts "\nOutput:\nAllocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
+      return "Allocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
     else
-      puts 'Sorry, parking lot is free'
+      return 'Sorry, parking lot is full'
     end
   when 'leave'
     spot = send(cmd.to_sym, $parking_lot, args[0])
-    puts "\nOutput:\nSlot​ number​ #{args[0]} ​is​ ​free"
+    "Slot​ number​ #{args[0]} ​is​ ​free"
   when 'status'
     send(cmd.to_sym, $parking_lot)
   when 'registration_numbers_for_cars_with_colour'
@@ -29,12 +29,12 @@ def handle_command(cmd, args)
   when 'slot_number_for_registration_number'
     slot = send(cmd.to_sym, $parking_lot, args[0])
     if !slot.nil?
-      puts slot.number
+      return slot.number
     else
-      puts 'Not found'
+      return 'Not found'
     end
   else
-    puts 'Invalid command'
+    'Invalid command'
   end
 end
 
@@ -43,7 +43,8 @@ if file_path
     execute = line
     cmd = execute.split(' ')[0]
     args = execute.split(' ')[1..-1]
-    handle_command(cmd, args)
+    cmd_output = execute_cmd(cmd, args)
+    puts(cmd_output)
   end
 else
   loop do
@@ -51,6 +52,6 @@ else
     execute = gets.to_s
     cmd = execute.split(' ')[0]
     args = execute.split(' ')[1..-1]
-    handle_command(cmd, args)
+    execute_cmd(cmd, args)
   end
 end
