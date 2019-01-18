@@ -15,7 +15,10 @@ unless file_path
     case cmd
     when 'create_parking_lot'
       parking_lot = send(cmd.to_sym, args)
-      puts "Created parking lot with #{args[0]} slots"
+      puts "\nOutput:\nCreated parking lot with #{args[0]} slots"
+    when 'park'
+      spot = send(cmd.to_sym, parking_lot, args[0], args[1])
+      puts "\nOutput:\nAllocated​ ​ slot​ ​ number:​ ​ #{spot.number}"
     else
       puts 'Invalid command'
     end

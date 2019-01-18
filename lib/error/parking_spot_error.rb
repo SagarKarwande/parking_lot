@@ -1,0 +1,2 @@
+class ParkingSpotError < StandardError
+end
