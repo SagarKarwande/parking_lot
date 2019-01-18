@@ -1,7 +1,7 @@
-require_relative './parking_level.rb'
+require_relative './parking_lot.rb'
 
 def create_parking_lot(args)
-  ParkingLevel.new(args[0].to_i)
+  ParkingLot.new(args[0].to_i)
 end
 
 def park(parking_lot, car_number, car_color)
