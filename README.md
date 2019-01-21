@@ -1,4 +1,4 @@
-<div class="center">
+<div align="center">
     <a href="https://travis-ci.org/SagarKarwande/parking_lot">
         <img src="https://travis-ci.org/SagarKarwande/parking_lot.svg?branch=master">
     </a>
