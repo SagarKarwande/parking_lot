@@ -1,3 +1,15 @@
+<div class="center">
+    <a href="https://travis-ci.org/SagarKarwande/parking_lot">
+        <img src="https://travis-ci.org/SagarKarwande/parking_lot.svg?branch=master">
+    </a>
+    <a href="https://codeclimate.com/github/SagarKarwande/parking_lot/maintainability">
+        <img src="https://api.codeclimate.com/v1/badges/ddb2a43f508efbb85741/maintainability" />
+    </a>
+    <a href="https://codeclimate.com/github/SagarKarwande/parking_lot/test_coverage">
+        <img src="https://api.codeclimate.com/v1/badges/ddb2a43f508efbb85741/test_coverage" />
+    </a>
+</div>
+
 # Parking Lot
 
 This is a automated ticketing system for parking based on some set of commands.
