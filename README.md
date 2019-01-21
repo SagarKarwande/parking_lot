@@ -5,8 +5,8 @@
     <a href="https://codeclimate.com/github/SagarKarwande/parking_lot/maintainability">
         <img src="https://api.codeclimate.com/v1/badges/ddb2a43f508efbb85741/maintainability" />
     </a>
-    <a href="https://codeclimate.com/github/SagarKarwande/parking_lot/test_coverage">
-        <img src="https://api.codeclimate.com/v1/badges/ddb2a43f508efbb85741/test_coverage" />
+    <a href="https://codecov.io/gh/aviacommerce/avia">
+        <img src="https://codecov.io/gh/aviacommerce/avia/branch/develop/graph/badge.svg" />
     </a>
 </div>
 

@@ -3,6 +3,10 @@ GEM
   specs:
     ast (2.4.0)
     awesome_print (1.8.0)
+    codecov (0.1.14)
+      json
+      simplecov
+      url
     coderay (1.1.2)
     coveralls (0.8.22)
       json (>= 1.8, < 3)
@@ -56,12 +60,14 @@ GEM
     thor (0.19.4)
     tins (1.20.2)
     unicode-display_width (1.4.1)
+    url (0.3.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   awesome_print
+  codecov
   coveralls
   pry
   rake

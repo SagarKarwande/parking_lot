@@ -13,4 +13,5 @@ group :test do
   gem 'rake'
   gem 'rspec'
   gem 'coveralls'
+  gem 'codecov'
 end
