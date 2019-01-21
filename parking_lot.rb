@@ -8,7 +8,7 @@ $parking_lot = nil
 def execute_cmd(cmd, args)
   case cmd
   when 'create_parking_lot'
-    $parking_lot = send(cmd.to_sym, args)
+    $parking_lot = send(cmd.to_sym, args[0].to_i)
     "Created parking lot with #{args[0]} slots"
   when 'park'
     send(cmd.to_sym, $parking_lot, args[0], args[1])

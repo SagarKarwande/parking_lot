@@ -1,7 +1,7 @@
 require_relative './parking_lot.rb'
 
-def create_parking_lot(args)
-  ParkingLot.new(args[0].to_i)
+def create_parking_lot(parking_slots_count)
+  ParkingLot.new(parking_slots_count)
 end
 
 def park(parking_lot, car_number, car_color)
