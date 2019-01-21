@@ -5,7 +5,11 @@ source 'https://rubygems.org'
 gem 'awesome_print'
 
 group :development do
-  gem 'rspec'
-  gem 'rubocop'
   gem 'pry'
+  gem 'rubocop'
+end
+
+group :test do
+  gem 'rake'
+  gem 'rspec'
 end
