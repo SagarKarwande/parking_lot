@@ -42,7 +42,7 @@ end
 def slot_number_for_registration_number(parking_lot, reg_num)
   slot = parking_lot.get_slot_by_reg_number(reg_num)
   if !slot.nil?
-    return slot.number
+    return slot.number.to_s
   else
     return 'Not found'
   end
