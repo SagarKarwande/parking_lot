@@ -6,11 +6,7 @@ end
 
 def park(parking_lot, car_number, car_color)
   slot = parking_lot.park(car_number, car_color)
-  if !slot.nil?
-    return "Allocated​ ​ slot​ ​ number:​ ​ #{slot.number}"
-  else
-    return 'Sorry, parking lot is full'
-  end
+  !slot.nil? ? "Allocated​ ​ slot​ ​ number:​ ​ #{slot.number}" : 'Sorry, parking lot is full'
 end
 
 def leave(parking_lot, slot_number)
@@ -41,9 +37,5 @@ end
 
 def slot_number_for_registration_number(parking_lot, reg_num)
   slot = parking_lot.get_slot_by_reg_number(reg_num)
-  if !slot.nil?
-    return slot.number.to_s
-  else
-    return 'Not found'
-  end
+  !slot.nil? ? slot.number.to_s : 'Not found'
 end
